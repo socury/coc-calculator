@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COC 건설 완료 시간 계산기</title>
     <style>
+        img{
+            width: 200px;
+        }
+
         /* 기본 스타일 설정 */
         body {
             display: flex;
@@ -24,11 +28,12 @@
             max-width: 400px;
             width: 100%;
             text-align: center;
+    
         }
 
         h1 {
             font-size: 24px;
-            color: #333;
+            color: black;
             margin-bottom: 20px;
         }
 
@@ -38,32 +43,34 @@
 
         label {
             font-weight: bold;
-            color: #555;
+            color: #800000;
             display: block;
             margin-bottom: 5px;
         }
 
         input {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            height: 43px;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #800000;
+            border-radius: 32px;
             box-sizing: border-box;
+            
         }
 
         button {
             background-color: #800000;
-            color: #fff;
+            color: #FFD602;
             padding: 10px;
             width: 100%;
-            border: none;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
         }
 
         button:hover {
-            background-color: #800000;
+            background-color: #660000;
         }
 
         .result {
@@ -76,6 +83,7 @@
 </head>
 <body>
     <div class="container">
+        <img src="pngwing.com (2) copy.png">
         <h1>COC 건설 완료 시간 계산기</h1>
         <div class="input-group">
             <label for="days">일수</label>

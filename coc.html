@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>건설 완료 시간 계산기</title>
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>건설 완료 시간 계산기</h1>
+        <div class="input-group">
+            <label for="days">일수</label>
+            <input type="number" id="days" placeholder="예: 2" min="0">
+        </div>
+        <div class="input-group">
+            <label for="hours">시간</label>
+            <input type="number" id="hours" placeholder="예: 3" min="0">
+        </div>
+        <div class="input-group">
+            <label for="minutes">분</label>
+            <input type="number" id="minutes" placeholder="예: 30" min="0">
+        </div>
+        <button onclick="calculateCompletionTime()">건설 완료 시간 계산</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        function calculateCompletionTime() {
+            // 현재 시간을 가져옵니다
+            const now = new Date();
+            
+            // 사용자 입력을 받아옵니다
+            const days = parseInt(document.getElementById('days').value) || 0;
+            const hours = parseInt(document.getElementById('hours').value) || 0;
+            const minutes = parseInt(document.getElementById('minutes').value) || 0;
+
+            // 시간 계산
+            const completionTime = new Date(now.getTime() + (days * 24 * 60 + hours * 60 + minutes) * 60 * 1000);
+
+            // 결과 포맷팅
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `건설 완료 시간: ${completionTime.toLocaleString()}`;
+        }
+    </script>
+</body>
+</html>

@@ -52,7 +52,7 @@
             width: 100%;
             height: 43px;
             padding-left: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border: 1px solid #800000;
             border-radius: 32px;
             box-sizing: border-box;
@@ -103,7 +103,7 @@
 
     <script>
         function calculateCompletionTime() {
-            // 현재 시간을 가져옵니다
+
             const now = new Date();
             
             // 사용자 입력을 받아옵니다
@@ -114,10 +114,17 @@
             // 시간 계산
             const completionTime = new Date(now.getTime() + (days * 24 * 60 + hours * 60 + minutes) * 60 * 1000);
 
-            // 결과 포맷팅
+            // 결과 포맷팅 (초 제외)
             const resultElement = document.getElementById('result');
-            resultElement.textContent = `건설 완료 시간: ${completionTime.toLocaleString()}`;
+            resultElement.textContent = `건설 완료 시간: ${completionTime.toLocaleString('ko-KR', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit' 
+            })}`;
         }
+
     </script>
 </body>
 </html>
